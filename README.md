@@ -14,9 +14,15 @@ This is a dashboard for tracking all your money tracking.
 
 All the sections come together to form the web app.
 
+## Scripts:
+
+1. **npm i or npm install** : For installing all the dependencies.
+1. **npm start** : Will run the app on localhost:3000
+1. **npm run test**: Will run the tests.
+
 ## Styling
 
-All the styling is done using vanilla CSS and Styled Components.
+All the styling is done using vanilla **CSS and Styled Components.**
 
 ## Dependencies
 **React-icons**: For all the icons.
@@ -25,12 +31,6 @@ All the styling is done using vanilla CSS and Styled Components.
 
 ## Testing:
 All the components are unit-tested by **React-testing-library and Jest.**
-
-## Scripts:
-Clone the Repo
-npm i or npm install : For installing all the dependencies.
-npm start : Will run the app on localhost:3000
-npm run test : Will run the tests.
 
 ![](https://i.imgur.com/AIzHdej.jpg)
 
