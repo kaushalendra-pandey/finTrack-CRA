@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import Activites from '../../components/Activities/Activities'
+import Activities from '../../components/Activities/Activities'
 import Topnav from '../../components/Topnav/Topnav'
 import UpcomingPayments from '../../components/UpcomingPayments/UpcomingPayments'
 import Mastercard from '../../components/Mastercard/Mastercard'
@@ -18,7 +18,7 @@ const Content = () => {
         <Wrapper>
             <Topnav/>
             <Mastercard/>
-            <Activites/>
+            <Activities/>
             <UpcomingPayments/>
         </Wrapper>
     )

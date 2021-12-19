@@ -80,7 +80,7 @@ const Sidenav = () => {
                 {
                     icons.map((item) => (
                         <>
-                            <Icon key={item.id}>
+                            <Icon key={item.id} data-testid="sidenav-icon">
                                 {item.icon}
                                 {
                                     item.notification > 0 && (

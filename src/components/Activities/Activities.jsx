@@ -36,7 +36,7 @@ const activity = [
 ]
 
 
-const Activites = () => {
+const Activities = () => {
     return (
         <div>
             <SectionTitle 
@@ -61,4 +61,4 @@ const Activites = () => {
     )
 }
 
-export default Activites
+export default Activities
