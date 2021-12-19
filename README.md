@@ -26,6 +26,12 @@ All the styling is done using vanilla CSS and Styled Components.
 ## Testing:
 All the components are unit-tested by **React-testing-library and Jest.**
 
+## Scripts:
+Clone the Repo
+npm i or npm install : For installing all the dependencies.
+npm start : Will run the app on localhost:3000
+npm run test : Will run the tests.
+
 ![](https://i.imgur.com/AIzHdej.jpg)
 
 
