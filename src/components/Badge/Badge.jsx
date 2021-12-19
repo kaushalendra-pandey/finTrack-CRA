@@ -20,11 +20,11 @@ const Badge = ({notifications}) => {
         <>
         {
             notifications > 0 ? (
-                <Circle>
+                <Circle data-testid="badge">
                     <Count isNumber> {notifications} </Count>
                 </Circle>
             ) : (
-                <Circle>
+                <Circle data-testid="badge">
                     <Count> {notifications} </Count>
                 </Circle>
             )

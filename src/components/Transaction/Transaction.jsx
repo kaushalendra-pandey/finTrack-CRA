@@ -38,8 +38,8 @@ const Time = styled.div`
 
 const Transaction = ({imgSrc,detail,time,amount,status}) => {
     return (
-        <Wrapper>
-            <ProfileImage imgSrc={imgSrc}/>
+        <Wrapper data-testid="transaction">
+            <ProfileImage imgSrc={imgSrc} alt="profile"/>
             <Detail>
                 {detail}
             </Detail>

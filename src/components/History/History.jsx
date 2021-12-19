@@ -33,7 +33,7 @@ const History = () => {
     return (
         <>
             <div>
-                <SectionTitle heading={'History'} subHeading={"Transaction of last 6 months"}/>
+                <SectionTitle heading={'History'} subHeading={"Transactions of last 6 months"}/>
             </div>
             {
                 transaction.map(item => (

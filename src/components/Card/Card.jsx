@@ -40,7 +40,7 @@ const Card = ({logo, text, price}) => {
        <CardContainer>
            <Wrapper>
 
-            <Icon>
+                <Icon data-testid="logo">
                     {logo}
                 </Icon>
                 <Description>

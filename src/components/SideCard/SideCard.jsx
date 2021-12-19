@@ -61,7 +61,7 @@ const InnerWrapper = styled.div`
 
 const SideCard = ({logo, task, status,cost}) => {
     return (
-        <Wrapper>
+        <Wrapper data-testid="sidecard">
             <InnerWrapper>
                 <IconContainer> 
                     {logo}

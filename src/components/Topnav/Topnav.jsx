@@ -44,7 +44,7 @@ const Topnav = () => {
           {
               icon.map(item => (
                   <>
-                    <Icon key={item.id}>
+                    <Icon key={item.id} data-testid="icon">
                         {item.logo}
                     </Icon>
                     {

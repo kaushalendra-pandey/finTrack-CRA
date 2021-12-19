@@ -25,7 +25,7 @@ const SearchIcon = styled.div`
 const Searchbar = () => {
     return (
         <Wrapper>
-            <SearchIcon>
+            <SearchIcon data-testid="search-icon">
                 <AiOutlineSearch size="1.5rem"/>
             </SearchIcon>   
             <Input type="text" placeholder='Search'>
