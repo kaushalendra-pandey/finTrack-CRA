@@ -16,10 +16,10 @@ const Wrapper = styled.div`
 const Content = () => {
     return (
         <Wrapper>
-            <Topnav/>
-            <Mastercard/>
-            <Activities/>
-            <UpcomingPayments/>
+            <Topnav />
+            <Mastercard />
+            <Activities />
+            <UpcomingPayments />
         </Wrapper>
     )
 }

@@ -1,22 +1,16 @@
-import Sidenav from './section/Sidenav/index'
-import styled from "styled-components"
-import Detail from './section/Details'
-import Content from "./section/Content/Content"
+import routes from './Routes'
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 
-const Container = styled.div`
-  display: flex;
-  background-color: #F5F5FD;
-`
-
+const AppRoutes = () => {
+  return useRoutes(routes);
+};
 function App() {
-  
+
   return (
-    <Container>
-      <Sidenav/>
-      <Detail/>
-      <Content/>
-    </Container>
-   
+    <Router>
+      <AppRoutes />
+    </Router>
+
   )
 }
 
