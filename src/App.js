@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Detail from './section/Details'
 import Content from "./section/Content"
 import LendAndBorrowSection from './section/LendAndBorrow'
+import SubscriptionSection from './section/SubscriptionSection'
 import {
   BrowserRouter,
   Routes,
@@ -23,6 +24,7 @@ function App() {
       <Sidenav/>
        
           <Routes>
+            <Route exact path="/subscription" element={<SubscriptionSection/>}/>
             <Route exact path="/lendAndBorrow" element={<LendAndBorrowSection />}/>
             <Route exact path="/" element={<Detail />}>
            

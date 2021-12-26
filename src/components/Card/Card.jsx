@@ -35,7 +35,7 @@ const Price = styled.h3`
 
 `
 
-const Card = ({logo, text, price}) => {
+const Card = ({logo, text,date, price}) => {
     return (
        <CardContainer data-testid="main-detail-card">
            <Wrapper>
@@ -46,8 +46,14 @@ const Card = ({logo, text, price}) => {
                 <Description>
                     {text}
                 </Description>
+                {
+                    date && 
+                    (<Description>
+                        {date}
+                    </Description>)
+                }
                 <Price>
-                    {price}
+                    Rs. {price}
                 </Price>
 
            </Wrapper>
@@ -59,7 +65,8 @@ const Card = ({logo, text, price}) => {
 Card.propTypes = {
     logo: PropTypes.any.isRequired,
     text: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired
+    price: PropTypes.string.isRequired,
+    date: PropTypes.string
 
 }
 

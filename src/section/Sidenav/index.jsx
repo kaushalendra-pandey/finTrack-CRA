@@ -19,7 +19,7 @@ const icons = [
         icon: <FiMonitor size={"2rem"}/>,
         id: 2,
         notification: 0,
-        link:"/"
+        link:"/subscription"
     },
     {
         icon: <BiNotepad size={"2rem"}/>,
