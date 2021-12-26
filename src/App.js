@@ -3,11 +3,13 @@ import styled from "styled-components"
 import Detail from './section/Details'
 import Content from "./section/Content"
 import LendAndBorrowSection from './section/LendAndBorrow'
+import SubscriptionSection from './section/SubscriptionSection'
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
+import BillSection from './section/BillSection'
 
 
 const Container = styled.div`
@@ -23,6 +25,8 @@ function App() {
       <Sidenav/>
        
           <Routes>
+            <Route exact path="/bills" element={<BillSection/>}/>
+            <Route exact path="/subscription" element={<SubscriptionSection/>}/>
             <Route exact path="/lendAndBorrow" element={<LendAndBorrowSection />}/>
             <Route exact path="/" element={<Detail />}>
            
