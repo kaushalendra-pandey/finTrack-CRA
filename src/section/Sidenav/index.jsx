@@ -25,13 +25,13 @@ const icons = [
         icon: <BiNotepad size={"2rem"}/>,
         id: 3,
         notification: 2,
-        link:"/lendAndBorrow"
+        link:"/bills"
     },
     {
         icon: <MdOutlineKeyboard size={"2rem"}/>,
         id: 4,
         notification: 0,
-        link:"/"
+        link:"/lendAndBorrow"
     },
     {
         icon: <CgNotes size={"2rem"}/>,
