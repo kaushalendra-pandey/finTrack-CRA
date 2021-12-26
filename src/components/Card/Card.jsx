@@ -10,7 +10,7 @@ const CardContainer = styled.div`
     margin: 10px;
     transition: transform 0.2s;
     &:hover{
-        transform: scale(1.1);
+        transform: scale(1.05);
         cursor: pointer;
     }
 
@@ -27,7 +27,7 @@ const Icon = styled.div`
 
 const Description = styled.p`
     font-weight: 700;
-    color: #9BA3AF
+    color: grey
 
 `
 const Price = styled.h3`

@@ -39,7 +39,7 @@ export const data = {
     {
       label: 'Expenses',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: 'black',
+      backgroundColor: '#647dee',
     }
     ]
 };

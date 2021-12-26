@@ -7,14 +7,14 @@ import { numberGreaterThanZero } from '../../Proptypes/greaterThanZero'
 const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    color: #9BA3AF;
+    color: grey;
     font-weight: 500;
     margin-top: 1rem;
     transition: transform 0.4s;
     border-radius: 1rem;
 
     &:hover{
-        transform: scale(1.1);
+        transform: scale(1.05);
         background-color: white;
         padding: 0.5rem;
     }
