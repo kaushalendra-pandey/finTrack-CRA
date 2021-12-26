@@ -4,17 +4,17 @@ import { useSpring, animated } from 'react-spring';
 import { MdClose } from 'react-icons/md';
 
 const Background = styled.div`
-  width: 50%;
+  width: 100%;
   height: 50%;
   background: rgba(0, 0, 0, 0.8);
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const ModalWrapper = styled.div`
-  width: 800px;
+  width: 57vw;
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -28,7 +28,7 @@ const ModalWrapper = styled.div`
 
 const ModalImg = styled.img`
   width: 96%;
-  height: 87%;
+  height: 100%;
   border-radius: 10px 0 0 10px;
   background: #000;
 `;

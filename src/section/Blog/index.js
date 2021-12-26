@@ -107,7 +107,7 @@ const BlogSection = () => {
   const BlogContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0.5rem;
     margin-left: 2rem;
