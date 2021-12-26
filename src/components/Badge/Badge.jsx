@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import PropTypes from "prop-types"
+import { numberGreaterThanZero } from '../../Proptypes/greaterThanZero'
 
 const Circle = styled.div`
     height: 20px;
@@ -40,7 +40,7 @@ Badge.defaultProps = {
 }
 
 Badge.propTypes = {
-    notifications: PropTypes.number
+    notifications: numberGreaterThanZero
 }
 
 export default Badge

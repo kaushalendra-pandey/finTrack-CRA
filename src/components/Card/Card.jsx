@@ -37,7 +37,7 @@ const Price = styled.h3`
 
 const Card = ({logo, text, price}) => {
     return (
-       <CardContainer>
+       <CardContainer data-testid="main-detail-card">
            <Wrapper>
 
                 <Icon data-testid="logo">

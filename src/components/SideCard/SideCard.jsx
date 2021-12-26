@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { numberGreaterThanZero } from '../../Proptypes/greaterThanZero'
 
 const Wrapper = styled.div`
     display: flex;
@@ -84,9 +85,9 @@ const SideCard = ({logo, task, status,cost}) => {
 
 SideCard.propTypes = {
     logo: PropTypes.any.isRequired,
-    cost: PropTypes.string.isRequired,
+    cost: numberGreaterThanZero,
     task: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired
+    status: PropTypes.oneOf(["Pending","Successful"])
 }
 
 export default SideCard

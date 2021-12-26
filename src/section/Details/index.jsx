@@ -51,7 +51,12 @@ const Detail = () => {
             <CardContainer>
                 {
                     card.map((item) => (
-                        <Card logo={item.logo} text={item.text} price={item.price} key={item.id}/>
+                        <Card 
+                        logo={item.logo} 
+                        text={item.text} 
+                        price={item.price} 
+                        key={item.id}
+                        />
                     ))
                 }
             </CardContainer>

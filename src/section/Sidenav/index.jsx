@@ -90,14 +90,6 @@ const Sidenav = () => {
                                     )
                                 }
                             </Icon>
-                            {/* {
-                                item?.notification > 0 && (
-                                    <Notification key={`${item.id}-notify`}>
-                                        
-                                    </Notification>
-
-                                )
-                            } */}
                         </>
 
                     ))
