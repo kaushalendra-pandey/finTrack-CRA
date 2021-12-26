@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import ProfileImage from '../ProfileImage/ProfileImage'
 import PropTypes from "prop-types"
+import { numberGreaterThanZero } from '../../Proptypes/greaterThanZero'
 
 const Wrapper = styled.div`
     display: flex;
@@ -65,7 +66,7 @@ Transaction.propTypes = {
     imgSrc: PropTypes.string,
     detail: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
-    amount: PropTypes.string.isRequired,
+    amount: numberGreaterThanZero,
     status: PropTypes.string.isRequired
 }
 

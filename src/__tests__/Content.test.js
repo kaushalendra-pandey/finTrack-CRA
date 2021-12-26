@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Content from "../../src/section/Content/Content"
+import Content from "../../src/section/Content"
 
 test('for App Component', () => {
     render(<Content/>);

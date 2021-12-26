@@ -48,7 +48,7 @@ const Topnav = () => {
                         {item.logo}
                     </Icon>
                     {
-                        item.id == 2 && (
+                        item.id === 2 && (
                             <BadgeContainer>
                                 <Badge key={`${item.id}-notify`} notifications={0}/>
                             </BadgeContainer>

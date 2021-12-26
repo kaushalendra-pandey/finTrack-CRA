@@ -19,10 +19,6 @@ const Container = styled.div`
     }
 `
 
-const Wrapper = styled.div`
-    
-`
-
 const CardNumber = styled.div`
     color: #CCCDCD;
     position: absolute;
