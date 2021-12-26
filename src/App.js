@@ -9,13 +9,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BillSection from "./section/BillSection";
 
 const Container = styled.div`
-  height: 105vh;
+  height: 170vh;
+  background-color: #f4f5fe;
 `;
 const RouteContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding-left: 50px;
+  padding-left: 80px;
   margin-top: -10px;
   margin-right: 350px;
 `;
