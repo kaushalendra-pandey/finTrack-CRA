@@ -12,7 +12,7 @@ const Heading = styled.h1`
 `
 const SubHeading = styled.p`
     margin-top: -6px;
-    color: #9BA3AF;
+    color: grey;
     font-weight: 700;
 `
 
