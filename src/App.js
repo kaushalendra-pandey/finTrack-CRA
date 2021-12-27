@@ -1,3 +1,4 @@
+import {useState} from "react"
 import Sidenav from "./section/Sidenav";
 import styled from "styled-components";
 import Detail from "./section/Details";
@@ -22,9 +23,11 @@ const RouteContainer = styled.div`
   margin-right: 350px;
 `;
 
-const isLoggedIn = false;
 
 function App() {
+
+  const [isLoggedIn,setIsLoggedIn] = useState(() => localStorage.getItem("token"))
+
   return !isLoggedIn ? (
     <BrowserRouter>
       <Routes>
