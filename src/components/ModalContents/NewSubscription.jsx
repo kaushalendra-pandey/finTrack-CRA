@@ -1,5 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from "styled-components"
+import addSubscription from '../../APIs/addSubscription';
+import swal from "sweetalert2"
 
 const Input = styled.input`
     width: 8rem;
@@ -12,7 +14,6 @@ const Input = styled.input`
 const Heading = styled.h1`
     text-align: center;
 `
-
 
 const ModalContent = styled.div`
   display: flex;
@@ -42,17 +43,48 @@ const Select = styled.select`
 `
 
 const NewSubscription = () => {
+
+  const [name,setName] = useState("")
+  const [date,setDate] = useState("")
+  const [amount,setAmount] = useState(0)
+  const [type,setType] = useState("MONTHLY")
+  const [description,setDescription] = useState("")
+
+  const addSubscriptionHandler = async () => {
+    try {
+      const data = await addSubscription(`${process.env.REACT_APP_BASE_URL}/subscription`,{name,date,amount,type,description}) 
+      console.log(data)
+      setName("")
+      setAmount(0)
+      setType("")
+      setDescription(0)
+      setDate("")
+      swal.fire({
+        icon:"success",
+        title:"New Subscription added"
+      })
+    } catch (error) {
+      console.log(error)
+      swal.fire({
+        icon:"error",
+        title:"Something went wrong."
+      })
+    }
+     
+    }
+
     return (
             <ModalContent>
                 <Heading>Add a new subscription... </Heading>
-                <Input type="text" placeholder="Service Name"/>
-                <Input type="date" placeholder="Enter the Date"/>
-                <Input type="number" placeholder='Enter the amount'/>
-                <Select name="subscription-type">
-                    <option value="MONTHLY"> Monthly </option>
-                    <option value="Yearly"> Yearly </option>
+                <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Service Name"/>
+                <Input value={date} onChange={(e) => setDate(e.target.value)} type="date" placeholder="Enter the Date"/>
+                <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder='Enter the amount'/>
+                <Input value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder='Description'/>
+                <Select value={type} onChange={(e) => setType(e.target.value)} name="subscription-type">
+                    <option value="monthly"> Monthly </option>
+                    <option value="yearly"> Yearly </option>
                 </Select>
-                <button> Add Subscription </button>
+                <button onClick={addSubscriptionHandler}> Add Subscription </button>
             </ModalContent>
     )
 }

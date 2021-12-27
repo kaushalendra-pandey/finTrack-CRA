@@ -1,5 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from "styled-components"
+import addBill from '../../APIs/addBill';
+import swal from "sweetalert2"
 
 const Input = styled.input`
     width: 8rem;
@@ -33,14 +35,38 @@ const ModalContent = styled.div`
 `;
 
 const PayBill = () => {
+
+  const [name,setName] = useState("")
+  const [amount,setAmount] = useState(0) 
+  const [description,setDescription] = useState("")
+
+  const handleAddBill = async () => {
+      try {
+        const data = await addBill(`${process.env.REACT_APP_BASE_URL}/bill`,{name,amount,description})
+        setName("")
+        setAmount(0)
+        setDescription(0)
+        swal.fire({
+          icon:"success",
+          title:"New Bill added"
+        })
+      } catch (error) {
+        swal.fire({
+          icon:"error",
+          title:"Something went wrong"
+        })
+      }
+     
+  }
+
     return (
             <ModalContent>
                 <Heading>Add a new active bill... </Heading>
-                <Input type="text" placeholder="Service Name"/>
-                <Input type="number" placeholder='Enter the amount'/>
-                <Input type="text" placeholder="Description"/>
+                <Input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Service Name"/>
+                <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder='Enter the amount'/>
+                <Input value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Description"/>
                 
-                <button> Add to active bills </button>
+                <button onClick={handleAddBill}> Add to active bills </button>
             </ModalContent>
     )
 }
