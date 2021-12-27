@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { LandingImg } from "../../assets";
 
 const Container = styled.div`
   background-color: #f6f4f0;
@@ -9,6 +10,7 @@ const Container = styled.div`
   padding: 10px;
   top: 0;
   left: 0;
+  display: inline-block
 `;
 
 const Header = styled.div`
@@ -51,8 +53,14 @@ const Items = styled.div`
   margin: 20px;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
 `;
+
+const Image = styled.img`
+  margin-left: 14rem;
+  height: 52vh;
+`
 
 const Items2 = styled.div`
   font-size: 20px;
@@ -98,6 +106,10 @@ const Button = styled.button`
   color: white;
   width: 400px;
   font-size: 20px;
+  transition: transform 0.2s;
+  &:hover {
+    transform:scale(1.1);
+  }
   @media (max-width: 768px) {
     font-size: 15px;
     margin-left: 50px;
@@ -129,7 +141,9 @@ const Landing = () => {
           </Text>
           <Button>Register</Button>
         </Content>
+        <Image src={LandingImg} alt="landing"/>
       </Container>
+     
     </>
   );
 };
