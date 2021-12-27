@@ -1,6 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
-import { LandingImg } from "../../assets";
+import { LandingImg, ModalImg4 } from "../../assets";
+import Modal from "../../components/Modal/Modal";
+import Login from "../../components/ModalContents/Login";
+
+
 
 const Container = styled.div`
   background-color: #f6f4f0;
@@ -116,11 +120,16 @@ const Button = styled.button`
     width: 250px;
   }
 `;
+
 const Landing = () => {
+
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <>
+       
       <Container>
-        <Header>
+      <Header>
           <Heading>fintrack</Heading>
           <Options>
             <Items>Subscription</Items>
@@ -129,19 +138,27 @@ const Landing = () => {
             <Items>Carrers</Items>
           </Options>
           <Options2>
-            <Items2>Login</Items2>
+            <Items2 onClick={() => setShowModal(true)}>Login</Items2>
             <Items2>Register</Items2>
           </Options2>
         </Header>
+        <Modal 
+              showModal={showModal} 
+              setShowModal={setShowModal}
+              img={ModalImg4}
+              Content={<Login/>}
+          />
         <Content>
           <Slogan>Store your savings the easy way</Slogan>
           <Text>
             lorem epsum doler sif enveorf evienfve einvienv einvienvi
             woedmqwncvos jinvdfn ivner j erfenwi wefn wnfciwn
           </Text>
+          
           <Button>Register</Button>
         </Content>
-        <Image src={LandingImg} alt="landing"/>
+       
+        
       </Container>
      
     </>
