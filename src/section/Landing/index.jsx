@@ -1,10 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { LandingImg, ModalImg4 } from "../../assets";
 import Modal from "../../components/Modal/Modal";
 import Login from "../../components/ModalContents/Login";
-
-
 
 const Container = styled.div`
   background-color: #f6f4f0;
@@ -14,7 +12,7 @@ const Container = styled.div`
   padding: 10px;
   top: 0;
   left: 0;
-  display: inline-block
+  display: inline-block;
 `;
 
 const Header = styled.div`
@@ -64,7 +62,7 @@ const Items = styled.div`
 const Image = styled.img`
   margin-left: 14rem;
   height: 52vh;
-`
+`;
 
 const Items2 = styled.div`
   font-size: 20px;
@@ -112,7 +110,7 @@ const Button = styled.button`
   font-size: 20px;
   transition: transform 0.2s;
   &:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
   }
   @media (max-width: 768px) {
     font-size: 15px;
@@ -121,15 +119,26 @@ const Button = styled.button`
   }
 `;
 
-const Landing = () => {
+const InnerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
-  const [showModal, setShowModal] = useState(false)
+const ImageContainer = styled.div`
+  margin-left: -100px;
+  margin-top: 100px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+  `;
+
+const Landing = () => {
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-       
       <Container>
-      <Header>
+        <Header>
           <Heading>fintrack</Heading>
           <Options>
             <Items>Subscription</Items>
@@ -142,25 +151,24 @@ const Landing = () => {
             <Items2>Register</Items2>
           </Options2>
         </Header>
-        <Modal 
-              showModal={showModal} 
-              setShowModal={setShowModal}
-              img={ModalImg4}
-              Content={<Login/>}
-          />
-        <Content>
-          <Slogan>Store your savings the easy way</Slogan>
-          <Text>
-            lorem epsum doler sif enveorf evienfve einvienv einvienvi
-            woedmqwncvos jinvdfn ivner j erfenwi wefn wnfciwn
-          </Text>
-          
-          <Button>Register</Button>
-        </Content>
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          img={ModalImg4}
+          Content={<Login />}
+        />
+        <InnerContainer>
+          <Content>
+            <Slogan>Store your savings the easy way</Slogan>
+            <Text>
+            Best Billing and Inventory Management Software. Easy Data Transfer. Simple and Easy Software. Record all business transactions such as Sales, Purchases, Quotations and Returns.
+            </Text>
+            <Button>Register</Button>
+          </Content>
+          <ImageContainer>          <Image src={LandingImg} /></ImageContainer>
        
-        
+        </InnerContainer>
       </Container>
-     
     </>
   );
 };
