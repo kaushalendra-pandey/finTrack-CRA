@@ -7,6 +7,7 @@ import LendAndBorrowSection from "./section/LendAndBorrow";
 import SubscriptionSection from "./section/SubscriptionSection";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BillSection from "./section/BillSection";
+import Landing from "./section/Landing";
 
 const Container = styled.div`
   height: 170vh;
@@ -21,8 +22,16 @@ const RouteContainer = styled.div`
   margin-right: 350px;
 `;
 
+const isLoggedIn = false;
+
 function App() {
-  return (
+  return !isLoggedIn ? (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Landing />} />
+      </Routes>
+    </BrowserRouter>
+  ) : (
     <BrowserRouter>
       <Container>
         <Sidenav />
