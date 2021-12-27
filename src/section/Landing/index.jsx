@@ -161,8 +161,7 @@ const Landing = () => {
           <Content>
             <Slogan>Store your savings the easy way</Slogan>
             <Text>
-              lorem epsum doler sif enveorf evienfve einvienv einvienvi
-              woedmqwncvos jinvdfn ivner j erfenwi wefn wnfciwn
+            Best Billing and Inventory Management Software. Easy Data Transfer. Simple and Easy Software. Record all business transactions such as Sales, Purchases, Quotations and Returns.
             </Text>
             <Button>Register</Button>
           </Content>
