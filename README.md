@@ -1,6 +1,12 @@
 ## FINTRACK
 
 This is a dashboard for tracking all your money tracking.
+Here is the layout  
+![image](https://user-images.githubusercontent.com/56989605/147682532-a3822f50-7c1c-4745-8e02-a31a06b30651.png)
+![image](https://user-images.githubusercontent.com/56989605/147682735-db88063c-1036-4150-b2ed-c995364f7c78.png)
+![image](https://user-images.githubusercontent.com/56989605/147682800-0bf62eb2-f03c-4524-8e23-c91be648f6ca.png)
+![image](https://user-images.githubusercontent.com/56989605/147682839-347bb9ba-6c46-44c1-a216-250aab4077ed.png)
+
 
 ## Folder Structure
         -src
