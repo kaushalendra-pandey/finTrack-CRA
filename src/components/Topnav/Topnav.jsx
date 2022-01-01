@@ -1,22 +1,27 @@
 import React from 'react'
 import styled from "styled-components"
-import {BsCalendar3} from "react-icons/bs"
-import {GrNotification} from "react-icons/gr"
+import {GrNotification,GrLogout} from "react-icons/gr"
 import ProfileImage from '../ProfileImage/ProfileImage'
 import Badge from '../Badge/Badge'
 
 const icon = [
     {
         id:1,
-        logo: <BsCalendar3 size={"2rem"}/>
+        logo: <GrLogout size={"2rem"}/>,
+        func: () => {
+            localStorage.clear()
+            window.location.reload()
+        }
     },
     {
         id:2,
-        logo:<GrNotification size={"2rem"}/>
+        logo:<GrNotification size={"2rem"}/>,
+        func: () => {}
     },
     {
         id:3,
-        logo: <ProfileImage imgSrc={"https://res.cloudinary.com/test-cloud-by-kaush/image/upload/v1616668960/samples/people/smiling-man.jpg"} />
+        logo: <ProfileImage imgSrc={"https://res.cloudinary.com/test-cloud-by-kaush/image/upload/v1616668960/samples/people/smiling-man.jpg"} />,
+        func : () => {}
     }
 ]
 
@@ -44,7 +49,7 @@ const Topnav = () => {
           {
               icon.map(item => (
                   <>
-                    <Icon key={item.id} data-testid="icon">
+                    <Icon onClick={() => item.func()} key={item.id} data-testid="icon">
                         {item.logo}
                     </Icon>
                     {

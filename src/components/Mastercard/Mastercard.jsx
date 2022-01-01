@@ -79,7 +79,7 @@ const Mastercard = () => {
       <CardHolder> Card Holder </CardHolder>
       <CardHolderName>
         {" "}
-        <b>Kaushalendra</b>{" "}
+        <b>{localStorage.getItem("first_name").toUpperCase()}</b>{" "}
       </CardHolderName>
       <FirstCircle />
       <SecondCircle />

@@ -5,7 +5,7 @@ import ActiveSubscription from '../ActiveSubscription/ActiveSubscription'
 import OpenModal from '../OpenModal/OpenModal'
 import { ModalImg3 } from '../../assets'
 import NewSubscription from '../ModalContents/NewSubscription'
-import getSubscription from '../../APIs/getSubscripiton'
+import getSubscription from '../../APIs/subscription/getSubscripiton'
 
 const Container = styled.div`
     width: 100%;

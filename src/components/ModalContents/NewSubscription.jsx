@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
-import addSubscription from '../../APIs/addSubscription';
+import addSubscription from '../../APIs/subscription/addSubscription';
 import swal from "sweetalert2"
 
 const Input = styled.input`

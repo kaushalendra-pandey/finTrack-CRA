@@ -65,7 +65,7 @@ const Card = ({logo, text,date, price}) => {
 Card.propTypes = {
     logo: PropTypes.any.isRequired,
     text: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     date: PropTypes.string
 
 }

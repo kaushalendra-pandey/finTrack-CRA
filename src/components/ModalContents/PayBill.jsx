@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
-import addBill from '../../APIs/addBill';
+import addBill from '../../APIs/bill/addBill';
 import swal from "sweetalert2"
 
 const Input = styled.input`
@@ -34,7 +34,7 @@ const ModalContent = styled.div`
   }
 `;
 
-const PayBill = () => {
+const PayBill = ({fetchUnpaidBills}) => {
 
   const [name,setName] = useState("")
   const [amount,setAmount] = useState(0) 
@@ -42,7 +42,7 @@ const PayBill = () => {
 
   const handleAddBill = async () => {
       try {
-        const data = await addBill(`${process.env.REACT_APP_BASE_URL}/bill`,{name,amount,description})
+        await addBill(`${process.env.REACT_APP_BASE_URL}/bill`,{name,amount,description})
         setName("")
         setAmount(0)
         setDescription(0)
@@ -50,6 +50,7 @@ const PayBill = () => {
           icon:"success",
           title:"New Bill added"
         })
+        fetchUnpaidBills()
       } catch (error) {
         swal.fire({
           icon:"error",

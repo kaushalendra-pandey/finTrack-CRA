@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
-import register from '../../APIs/register';
+import register from '../../APIs/auth/register';
 
 const Input = styled.input`
     width: 8rem;

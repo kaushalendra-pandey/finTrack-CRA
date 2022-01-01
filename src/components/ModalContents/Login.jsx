@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
-import login from '../../APIs/login';
-import {useNavigate} from "react-router-dom"
+import login from '../../APIs/auth/login';
 
 const Input = styled.input`
     width: 8rem;
@@ -36,18 +35,16 @@ const ModalContent = styled.div`
 
 const Login = () => {
 
-    const navigate = useNavigate
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
 
     const handleLogin = async () => {
         try {
             
-            await login("http://localhost:4000/auth/login",{email,password})
-
+            await login(`${process.env.REACT_APP_AUTH_URL}/login`,{email,password})
 
         } catch (error) {
-            
+            console.log(error)
         }
         
     }
