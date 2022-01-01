@@ -26,7 +26,7 @@ const RouteContainer = styled.div`
 
 function App() {
 
-  const [isLoggedIn,setIsLoggedIn] = useState(() => localStorage.getItem("token"))
+  const [isLoggedIn] = useState(() => localStorage.getItem("token"))
 
   return !isLoggedIn ? (
     <BrowserRouter>
