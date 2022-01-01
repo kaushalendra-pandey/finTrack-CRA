@@ -6,6 +6,7 @@ import { MdOutlineKeyboard } from "react-icons/md";
 import { CgNotes } from "react-icons/cg";
 import Badge from "../../components/Badge/Badge";
 import { useNavigate } from "react-router-dom";
+import Tooltip from "react-simple-tooltip"
 
 const icons = [
   {
@@ -13,30 +14,35 @@ const icons = [
     id: 1,
     notification: 0,
     link: "/",
+    tooltip:"Dashboard"
   },
   {
     icon: <FiMonitor size={"2rem"} />,
     id: 2,
     notification: 0,
     link: "/subscription",
+    tooltip:"Subscription"
   },
   {
     icon: <BiNotepad size={"2rem"} />,
     id: 3,
     notification: 2,
     link: "/bills",
+    tooltip:"Bills"
   },
   {
     icon: <MdOutlineKeyboard size={"2rem"} />,
     id: 4,
     notification: 0,
     link: "/lendAndBorrow",
+    tooltip:"Lend and Borrow"
   },
   {
     icon: <CgNotes size={"2rem"} />,
     id: 5,
     notification: 0,
     link: "/blogs",
+    tooltip:"Blogs"
   },
 ];
 
@@ -91,19 +97,23 @@ const Sidenav = () => {
         <IconContainer>
           {icons.map((item) => (
             <>
-              <Icon
-                onClick={() => navigate(`${item.link}`)}
-                key={item.id}
-                data-testid="sidenav-icon"
-              >
-                {item.icon}
+             
+                  <Icon
+                    onClick={() => navigate(`${item.link}`)}
+                    key={item.id}
+                    data-testid="sidenav-icon"
+                  >
+                      <Tooltip content={item.tooltip}>
+                        {item.icon}
+                      </Tooltip>
 
-                {item.notification > 0 && (
-                  <Notification key={`${item.id}-notify`}>
-                    <Badge notifications={item.notification} />
-                  </Notification>
-                )}
-              </Icon>
+                    {item.notification > 0 && (
+                      <Notification key={`${item.id}-notify`}>
+                        <Badge notifications={item.notification} />
+                      </Notification>
+                    )}
+                  </Icon>
+               
             </>
           ))}
         </IconContainer>
