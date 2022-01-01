@@ -1,6 +1,7 @@
 import React from "react";
 import Blog from "../../components/Blog/Blog";
 import styled from "styled-components";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const getRandomColor = () => {
   const color = [
@@ -115,6 +116,7 @@ const BlogSection = () => {
   
   return (
     <>
+     <SectionTitle heading="Blogs" subHeading="Financial literacy is important"/>
       <BlogContainer>
         {blog.map((item) => (
           <Blog

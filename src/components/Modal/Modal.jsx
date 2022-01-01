@@ -6,8 +6,6 @@ import { MdClose } from 'react-icons/md';
 const Background = styled.div`
   width: 100%;
   height: 50%;
-  background: rgba(0, 0, 0, 0.8);
-  /* position: fixed; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +26,7 @@ const ModalWrapper = styled.div`
 
 const ModalImg = styled.img`
   width: 96%;
-  height: 100%;
+  height: inherit;
   border-radius: 10px 0 0 10px;
   background: #000;
 `;

@@ -64,6 +64,7 @@ const Blog = ({ heading, text, author, timestamp, color }) => {
   `;
   return (
     <>
+
       <CardContainer>
         <Wrapper>
           <Heading>{heading}</Heading>
