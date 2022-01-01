@@ -42,7 +42,7 @@ const Select = styled.select`
     
 `
 
-const NewSubscription = () => {
+const NewSubscription = ({fetchSubscription}) => {
 
   const [name,setName] = useState("")
   const [date,setDate] = useState("")
@@ -63,6 +63,7 @@ const NewSubscription = () => {
         icon:"success",
         title:"New Subscription added"
       })
+      fetchSubscription()
     } catch (error) {
       console.log(error)
       swal.fire({

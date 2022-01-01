@@ -1,5 +1,7 @@
 import React from 'react'
 import Carousel from "react-elastic-carousel"
+import { MdAirlineSeatFlat } from 'react-icons/md'
+import ISOtoDate from '../../Utilities/ISOtoDate'
 import Card from '../Card/Card'
 
 const breakpoints = [
@@ -15,7 +17,7 @@ const MainCarousel = ({items}) => {
         <Carousel breakPoints={breakpoints}>
             {
                 items.map(item => (
-                    <Card key={item.id} logo={item.icon} date={item.date} text={item.title} price={item.amount}/>
+                    <Card key={item.id} logo={item.icon ||  <MdAirlineSeatFlat size={"3rem"}/>} date={ISOtoDate(item.createdAt)} text={item.description} price={item.amount}/>
                 ))
             }
         </Carousel>

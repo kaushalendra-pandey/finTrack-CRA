@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { LandingImg, ModalImg4 } from "../../assets";
 import Modal from "../../components/Modal/Modal";
 import Login from "../../components/ModalContents/Login";
+import Register from "../../components/ModalContents/Register";
 
 const Container = styled.div`
   background-color: #f6f4f0;
@@ -133,7 +134,19 @@ const ImageContainer = styled.div`
   `;
 
 const Landing = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModalLogin, setShowLoginModal] = useState(false);
+  const [showModalRegister, setShowRegisterModal] = useState(false);
+
+  const handleModalOpen = (modal) => {
+      if(modal === "LOGIN"){
+        setShowRegisterModal(false)
+        setShowLoginModal(true)
+      } else {
+        setShowLoginModal(false)
+        setShowRegisterModal(true)
+        
+      }
+  }
 
   return (
     <>
@@ -144,18 +157,24 @@ const Landing = () => {
             <Items>Subscription</Items>
             <Items>Bills</Items>
             <Items>Payment</Items>
-            <Items>Carrers</Items>
+            <Items>Careers</Items>
           </Options>
           <Options2>
-            <Items2 onClick={() => setShowModal(true)}>Login</Items2>
-            <Items2>Register</Items2>
+            <Items2 onClick={() => handleModalOpen("LOGIN")}>Login</Items2>
+            <Items2 onClick={() => handleModalOpen("REGISTER")}>Register</Items2>
           </Options2>
         </Header>
         <Modal
-          showModal={showModal}
-          setShowModal={setShowModal}
+          showModal={showModalLogin}
+          setShowModal={setShowLoginModal}
           img={ModalImg4}
           Content={<Login />}
+        />
+         <Modal
+          showModal={showModalRegister}
+          setShowModal={setShowRegisterModal}
+          img={ModalImg4}
+          Content={<Register />}
         />
         <InnerContainer>
           <Content>
