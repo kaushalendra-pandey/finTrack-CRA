@@ -4,7 +4,6 @@ import { FiHome, FiMonitor } from "react-icons/fi";
 import { BiNotepad } from "react-icons/bi";
 import { MdOutlineKeyboard } from "react-icons/md";
 import { CgNotes } from "react-icons/cg";
-import { GiTombstone } from "react-icons/gi";
 import Badge from "../../components/Badge/Badge";
 import { useNavigate } from "react-router-dom";
 
@@ -38,12 +37,6 @@ const icons = [
     id: 5,
     notification: 0,
     link: "/blogs",
-  },
-  {
-    icon: <GiTombstone size={"2rem"} />,
-    id: 6,
-    notification: 0,
-    link: "/",
   },
 ];
 

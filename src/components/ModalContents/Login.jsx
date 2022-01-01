@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
 import login from '../../APIs/auth/login';
+import Swal from 'sweetalert2';
 
 const Input = styled.input`
     width: 8rem;
@@ -37,14 +38,19 @@ const Login = () => {
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const handleLogin = async () => {
         try {
-            
+            setLoading(true)
             await login(`${process.env.REACT_APP_AUTH_URL}/login`,{email,password})
-
+            setLoading(true)
         } catch (error) {
-            console.log(error)
+            setLoading(false)
+            Swal.fire({
+              icon:"error",
+              title:error
+          })
         }
         
     }
@@ -55,7 +61,7 @@ const Login = () => {
                 <Input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email"/>
                 <Input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password"/>
                 
-                <button onClick={handleLogin}> Login </button>
+                <button onClick={handleLogin}>{loading ? "Please Wait" : "Login"}</button>
             </ModalContent>
     )
 }

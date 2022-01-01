@@ -10,7 +10,7 @@ const register = async (url, body) => {
         localStorage.setItem("email",data?.user?.email)
         window.location.reload()
     } catch (error) {
-        throw Error(error)  
+        throw Error(error.response.data)  
     }
    
 

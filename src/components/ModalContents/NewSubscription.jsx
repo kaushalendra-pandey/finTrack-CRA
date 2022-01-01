@@ -49,10 +49,13 @@ const NewSubscription = ({fetchSubscription}) => {
   const [amount,setAmount] = useState(0)
   const [type,setType] = useState("MONTHLY")
   const [description,setDescription] = useState("")
+  const [loading, setLoading] = useState(false) 
 
   const addSubscriptionHandler = async () => {
     try {
+      setLoading(true)
       const data = await addSubscription(`${process.env.REACT_APP_BASE_URL}/subscription`,{name,date,amount,type,description}) 
+      setLoading(false)
       console.log(data)
       setName("")
       setAmount(0)
@@ -66,6 +69,7 @@ const NewSubscription = ({fetchSubscription}) => {
       fetchSubscription()
     } catch (error) {
       console.log(error)
+      setLoading(false)
       swal.fire({
         icon:"error",
         title:"Something went wrong."
@@ -85,7 +89,7 @@ const NewSubscription = ({fetchSubscription}) => {
                     <option value="monthly"> Monthly </option>
                     <option value="yearly"> Yearly </option>
                 </Select>
-                <button onClick={addSubscriptionHandler}> Add Subscription </button>
+                <button onClick={addSubscriptionHandler}>{ loading ? "Adding..." : "Add Subscription" } </button>
             </ModalContent>
     )
 }

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import styled from "styled-components"
+import Swal from 'sweetalert2';
 import register from '../../APIs/auth/register';
 
 const Input = styled.input`
@@ -13,7 +14,6 @@ const Input = styled.input`
 const Heading = styled.h1`
     text-align: center;
 `
-
 
 const ModalContent = styled.div`
   display: flex;
@@ -39,14 +39,19 @@ const Register = () => {
     const [password,setPassword] = useState("")
     const [fname ,setFname] = useState("")
     const [lname, setLname] = useState("")
+    const [loading, setLoading] = useState(false )
 
     const handleRegister = async () => {
         try {
-            
+            setLoading(true)
             await register(`${process.env.REACT_APP_AUTH_URL}/register`,{email,password,last_name:lname,first_name:fname})
-
+            setLoading(false)
         } catch (error) {
-            console.log(error)
+            Swal.fire({
+                icon:"error",
+                title:error
+            })
+            setLoading(false)
         }
         
     }
@@ -59,7 +64,7 @@ const Register = () => {
                 <Input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter your email"/>
                 <Input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password"/>
                 
-                <button onClick={handleRegister}> Register </button>
+                <button onClick={handleRegister}> {loading ? "Please Wait" : "Register"} </button>
             </ModalContent>
     )
 }

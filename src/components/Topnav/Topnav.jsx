@@ -10,7 +10,7 @@ const icon = [
         logo: <GrLogout size={"2rem"}/>,
         func: () => {
             localStorage.clear()
-            window.location.reload()
+            window.location.replace("/")
         }
     },
     {

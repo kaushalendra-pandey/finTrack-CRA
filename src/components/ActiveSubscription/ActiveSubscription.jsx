@@ -12,7 +12,10 @@ const ActiveSubscription = ({activeSubscription}) => {
     return (
         <>
             <CardContainer>
-                <MainCarousel items={activeSubscription}/>
+                {
+                   activeSubscription.length > 0 ? <MainCarousel items={activeSubscription}/> : <h2> No subscription found. </h2>
+                }
+                
             </CardContainer>
         </>
     )

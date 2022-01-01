@@ -15,7 +15,6 @@ const Heading = styled.h1`
     text-align: center;
 `
 
-
 const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,10 +38,13 @@ const PayBill = ({fetchUnpaidBills}) => {
   const [name,setName] = useState("")
   const [amount,setAmount] = useState(0) 
   const [description,setDescription] = useState("")
+  const [loading,setLoading] = useState(false)
 
   const handleAddBill = async () => {
       try {
+        setLoading(true)
         await addBill(`${process.env.REACT_APP_BASE_URL}/bill`,{name,amount,description})
+        setLoading(false)
         setName("")
         setAmount(0)
         setDescription(0)
@@ -52,6 +54,7 @@ const PayBill = ({fetchUnpaidBills}) => {
         })
         fetchUnpaidBills()
       } catch (error) {
+        setLoading(false)
         swal.fire({
           icon:"error",
           title:"Something went wrong"
@@ -67,7 +70,7 @@ const PayBill = ({fetchUnpaidBills}) => {
                 <Input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder='Enter the amount'/>
                 <Input value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Description"/>
                 
-                <button onClick={handleAddBill}> Add to active bills </button>
+                <button onClick={handleAddBill}> {loading ? "Adding" :  "Add to active bills"} </button>
             </ModalContent>
     )
 }

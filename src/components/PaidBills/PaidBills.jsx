@@ -10,7 +10,7 @@ const PaidBills = ({paidBills}) => {
     return (
         <>
             <CardContainer>
-                <MainCarousel items={paidBills}/>
+               {paidBills.length > 0 ? <MainCarousel items={paidBills}/> : <h2> No paid bills found. </h2> } 
             </CardContainer>
         </>
     )
