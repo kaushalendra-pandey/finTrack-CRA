@@ -2,6 +2,11 @@
 
 Fin-track is all in one expense-tracker one would ever need. We track your daily/ weekly/ monthly expenses, manage all your recurring payments, notify you about your subscriptions, manage your lend/borrow history.
 
+## NOTE:
+```diff
+- I am still working on the mobile designs of this app.😅
+```
+
 ## Screenshots
 ![](https://i.imgur.com/fFvisOY.png)
 ---
